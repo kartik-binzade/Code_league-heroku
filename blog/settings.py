@@ -28,7 +28,8 @@ SECRET_KEY = 'i$hi=c^0be&f^!k5tqouk*&u6e3_&r4jz&8k-+c4!gdn=3^!73'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['codeleag.herokuapp.com', '*', '127.0.0.1', ]
+ALLOWED_HOSTS = ['codeleag.herokuapp.com', '*',
+                 '127.0.0.1', 'college-mngment-cl.herokuapp.com']
 
 
 # Application definition
