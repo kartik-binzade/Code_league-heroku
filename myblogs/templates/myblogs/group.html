@@ -1,0 +1,116 @@
+{% extends 'myblogs/base.html' %}
+{% load static %}
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'myblog/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'myblog/css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'myblog/css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'myblog/css/style.css' %}">
+    <title>{% block title %}Code_League{% endblock %}</title>
+    {% load static %}
+    <script src="{% static 'myblog/js/jquery-3.2.1.slim.min.js' %}"></script>
+    <script src="{% static 'myblog/js/popper.min.js' %}"></script>
+    <script src="{% static 'myblog/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'myblog/js/main.js' %}"></script>
+{% block content %}
+<div>
+<p style="color: red">{{error}}</p>
+  <h2>Group</h2>
+  <h3>{{group.name}}</h3>
+  <h4>{{group.description}}</h4>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-primary" name="btnJoinGroup">Join Group</button>
+  </form>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-md-5 pr-md-5 pr-1">
+<h2>Create Class</h2>
+
+  <form method="post">
+    {% csrf_token %}
+    {% for field in classform %}
+    <div>
+        {{ field.label_tag }}<br>
+        {{ field }}
+        {% if field.help_text %}
+          <small style="color: grey">{{ field.help_text }}</small>
+        {% endif %}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+    </div>
+    {% endfor %}
+    <button type="submit" class="btn btn-primary" name="btnCreateClass">Create Class</button>
+  </form>
+<h2>Classes</h2>
+{% for class in classes %}
+<h3>{{class.name}}</h3><br>
+  {{class.description}}<br>
+  <a href="{{class.id}}">More information</a>
+{% endfor %}
+</div>
+<div class="col-md-5">
+<h2>Ask Question</h2>
+
+  <form method="post">
+    {% csrf_token %}
+    {% for field in questionform %}
+    <div>
+        {{ field.label_tag }}<br>
+        {{ field }}
+        {% if field.help_text %}
+          <small style="color: grey">{{ field.help_text }}</small>
+        {% endif %}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+    </div>
+    {% endfor %}
+    <button type="submit" class="btn btn-primary"  name="btnCreateQuestion">Ask Question</button>
+  </form>
+<h2>Questions</h2>
+{% for question in questions %}
+<h3>{{question.question}}</h3><br>
+  {{question.description}}<br>
+    {{ question.answer }}
+  {{question.answers.count}} answers so far<br>
+  <a href="{{class.id}}">More information</a>
+{% endfor %}
+    <h2>Answers</h2>
+{% for answer in answers %}
+<p>
+  {{answer.sender.user}}<br>
+  {{answer.text}}<br>
+</p>
+{% endfor %}
+</div>
+</div>
+</div>
+<div>
+<h2>Post Comment</h2>
+ <form method="post">
+    {% csrf_token %}
+    {% for field in commentform %}
+      <div>
+        {{ field.label_tag }}<br>
+        {{ field }}
+        {% if field.help_text %}
+          <small style="color: grey">{{ field.help_text }}</small>
+        {% endif %}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </div>
+    {% endfor %}
+    <button type="submit" class="btn btn-primary"   name="btnPostComment">Post Comment</button>
+  </form>
+<h2>Comments</h2>
+{% for comment in comments %}
+<p>
+  {{comment.sender.user}}<br>
+  {{comment.text}}<br>
+</p>
+</div>
+{% endfor %}
+{% endblock %}

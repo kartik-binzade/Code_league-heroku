@@ -1,0 +1,72 @@
+{% extends 'myblogs/base.html' %}
+
+{% block content %}
+  <h2>{{class.name}}</h2>
+<h3>{{class.description}}</h3>
+<p style="color: red">{{error}}</p>
+<h3>Attendees</h3>
+{% for members in  class.attendees.all %}
+<div>
+    {{members.user}}
+</div>
+{% endfor %}
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-primary"  name="btnJoinClass">Join Class</button>
+</form>
+<h3>Choice of Times</h3>
+{% for choice in choices %}
+<div>
+    {{choice.start}}<br>
+    {{choice.end}}<br>
+    {{choice.votes}}<br>
+    <form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-primary"  name="btnVote" value="{{choice.id}}">Available</button>
+  </form>
+</div>
+{% endfor %}
+<div>
+  <form method="post">
+    {% csrf_token %}
+    {% for field in time_choice_form %}
+      <div>
+        {{ field.label_tag }}<br>
+        {{ field }}
+        {% if field.help_text %}
+          <small style="color: grey">{{ field.help_text }}</small>
+        {% endif %}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </div>
+    {% endfor %}
+    <button type="submit" class="btn btn-primary"  name="btnCreateChoice">Request new time</button>
+  </form>
+</div>
+<div>
+  <form method="post">
+    {% csrf_token %}
+    {% for field in form %}
+      <div>
+        {{ field.label_tag }}<br>
+        {{ field }}
+        {% if field.help_text %}
+          <small style="color: grey">{{ field.help_text }}</small>
+        {% endif %}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </div>
+    {% endfor %}
+    <button type="submit" class="btn btn-primary"  name="btnPostComment">Post Comment</button>
+  </form>
+</div>
+<h2>Comments</h2>
+{% for comment in comments %}
+<p>
+  {{comment.sender.user}}<br>
+  {{comment.text}}<br>
+</p>
+{% endfor %}
+{% endblock %}

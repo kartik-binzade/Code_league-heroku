@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% extends 'myblogs/base.html' %}
+    <meta charset="UTF-8">
+    <title></title>
+     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Free HTML5 Website Template by uicookies.com" />
+    <meta name="keywords" content="free bootstrap 4, free bootstrap 4 template, free website templates, free html5, free template, free website template, html5, css3, mobile first, responsive" />
+    <meta name="author" content="uicookies.com" />
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'myblog/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'myblog/css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'myblog/css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'myblog/css/style.css' %}">
+    <title>{% block title %}Code_League{% endblock %}</title>
+    {% load static %}
+    <script src="{% static 'myblog/js/jquery-3.2.1.slim.min.js' %}"></script>
+    <script src="{% static 'myblog/js/popper.min.js' %}"></script>
+    <script src="{% static 'myblog/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'myblog/js/main.js' %}"></script>
+</head>
+<body>
+
+{% block content %}
+    <p>Blogposts</p>
+
+    <ul>
+        {% for blogpost in blogposts %}
+            <li>{{ blogpost }}</li>
+            <li>
+            <a href="{% url 'myblogs:blogpost' blogpost.id %}">{{ blogpost }}</a>
+            </li>
+        {% empty %}
+            <li>No posts have been added yet.</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}
+</body>
+ <footer class="probootstrap-footer">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-md mb-4"><h2 class="probootstrap-heading"><a href="#">Code_League</a></h2></div>
+              <div class="col-md">
+                <div class="probootstrap-footer-widget mb-4">
+                  <h2 class="probootstrap-heading-2">Code for everyone</h2>
+                  <ul class="list-unstyled">
+                    <li><a href="{% url 'myblogs:about' %}" class="py-2 d-block">About</a></li>
+                    <li><a href="https://devworld10.netlify.app" class="py-2 d-block">Get updates</a></li>
+                    <li><a href="https://engprivykurura.tk" class="py-2 d-block">Press</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md">
+                 <div class="probootstrap-footer-widget mb-4">
+                  <h2 class="probootstrap-heading-2">Communities</h2>
+                  <ul class="list-unstyled">
+                    <li><a href="https://www.priviledgeprogrammer.cf" class="py-2 d-block">Support Priviledge</a></li>
+                    <li><a href="https://devworld.tk" class="py-2 d-block">Support Kartik</a></li>
+                    <li><a href="https://www.lensclick.cf" class="py-2 d-block">Better Web</a></li>
+                    <li><a href="https://wa.me/263716437178" class="py-2 d-block">Contribute</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md">
+                 <div class="probootstrap-footer-widget mb-4">
+                  <h2 class="probootstrap-heading-2">Useful links</h2>
+                  <ul class="list-unstyled">
+                    <li><a href="#" class="py-2 d-block">Project sevelopers</a></li>
+                    <li><a href="https://www.priviledgeprogrammer.ga" class="py-2 d-block">privykurura</a></li>
+                    <li><a href="https://devworl.tk" class="py-2 d-block">Kartik</a></li>
+                    <li><a href="https://www.priviledgekurura.cf" class="py-2 d-block">priviledge</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="probootstrap-footer-widget mb-4">
+              <ul class="probootstrap-footer-social list-unstyled float-md-right float-lft">
+                <li><a href="#"><span class="icon-twitter"></span></a></li>
+                <li><a href="https://www.facebook.com/groups/213885173800920/"><span class="icon-facebook"></span></a></li>
+                <li><a href="https://www.instagram.com/code_league.kb/"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md text-left">
+            <ul class="list-unstyled footer-small-nav">
+              <li><a href="#">Legal</a></li>
+              <li><a href="#">Privacy</a></li>
+              <li><a href="#">Cookies</a></li>
+              <li><a href="#">Terms</a></li>
+              <li><a href="{% url 'myblogs:about' %}">About</a></li>
+            </ul>
+          </div>
+          <div class="col-md text-md-right text-left">
+            <p><small>&copy; Code_League 2021. All Rights Reserved. <br> Made with <span class="icon-heart"></span>  code for us <a href="https://priviledgekurura.cf/">Code for everyone</a></small></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+
+
+
+</html>

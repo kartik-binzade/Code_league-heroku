@@ -1,0 +1,38 @@
+{% extends 'myblogs/base.html' %}
+
+{% block content %}
+<div class="container">
+  <h2>Create Group</h2>
+  <form method="post">
+    {% csrf_token %}
+
+    {% for field in form %}
+      <div>
+        {{ field.label_tag }}<br>
+        {{ field }}
+        {% if field.help_text %}
+          <small style="color: grey">{{ field.help_text }}</small>
+        {% endif %}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </div>
+    {% endfor %}
+    <button type="submit" class="btn btn-primary"  name="btnCreateGroup">Create Group</button>
+  </form>
+</div>
+<div class="container">
+<h2>Groups</h2>
+{% for group in groups %}
+<h3>{{group.name}}</h3><br>
+  {{group.description}}<br>
+  <a href="{{group.id}}">More information</a>
+  <form method="post">
+    {% csrf_token %}
+      {{ form.as_p }}
+    <button  type="submit" class="btn btn-primary"  name="btnJoinGroup">Join Group</button>
+  </form>
+{% endfor %}
+</div>
+<br>
+{% endblock %}

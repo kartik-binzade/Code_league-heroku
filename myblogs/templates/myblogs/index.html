@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Free HTML5 Website Template by uicookies.com" />
+    <meta name="keywords" content="free bootstrap 4, free bootstrap 4 template, free website templates, free html5, free template, free website template, html5, css3, mobile first, responsive" />
+    <meta name="author" content="uicookies.com" />
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'myblog/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'myblog/css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'myblog/css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'myblog/css/style.css' %}">
+    <title>{% block title %}Code_League{% endblock %}</title>
+    {% load static %}
+    <script src="{% static 'myblog/js/jquery-3.2.1.slim.min.js' %}"></script>
+    <script src="{% static 'myblog/js/popper.min.js' %}"></script>
+    <script src="{% static 'myblog/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'myblog/js/main.js' %}"></script>
+  </head>
+    <body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark probootstrap-navabr-dark">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">Code_League</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#probootstrap-nav" aria-controls="probootstrap-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="probootstrap-nav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item"><a href="{% url 'myblogs:home' %}" class="nav-link">Home</a></li>
+              <li class="nav-item"><a href="{% url 'myblogs:blogposts' %}" class="nav-link">Posts</a></li>
+              <li class="nav-item"><a href="{% url 'myblogs:services' %}" class="nav-link">Services</a></li>
+              <li class="nav-item"><a href="{% url 'myblogs:about' %}" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="{% url 'myblogs:topics' %}" class="nav-link">Notebook</a></li>
+
+              <li class="nav-item probootstrap-cta probootstrap-seperator"><a href="{% url 'users:register' %}" class="nav-link">Sign up</a></li>
+              <li class="nav-item probootstrap-cta"><a href="{% url 'users:login' %}" class="nav-link">Log In</a></li>
+            </ul>
+
+          </div>
+        </div>
+      </nav>
+
+     <section class="probootstrap-cover">
+      <div class="container">
+        <div class="row probootstrap-vh-75 align-items-center text-left">
+          <div class="col-sm">
+            <div class="probootstrap-text pt-5">
+              <h1 class="probootstrap-heading text-white mb-4">Code_League code for everyone</h1>
+              <div class="probootstrap-subheading mb-5">
+                <p class="h4 font-weight-normal"> <u></u></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="probootstrap-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7 pr-md-5 pr-0">
+            <h2 class="mb-5">Our Mission</h2>
+            <p>As the world changes, so must the education system. Yet, this should not be taken as a threat, rather, as an opportunity to do better.</p>
+            <p>One challenge faced by educators is the fact that students all learn at their own paces. At times this means that students miss what their teachers are saying.
+              Sometimes, this is corrected by exttra classes or tuition. However, there are not enough teachers to hold extra classes whenever a student has questions.
+            </p>
+            <p>Fortunately, they do not need to. By creating a space online for discussion, both current and senior students can contribute to answer questions about the specific topic.
+            This lightens the load on teachers and allows them to easily test the understanding of their students. Additionally, senior students can revise the material and extend their understanding
+          </p>
+          <p>This platform also allows teachers and students to plan out extra classes, which remain important as some questions are better explained in a physical setting.
+            Teachers and any student with deep knowledge of the subject material can hold these classes.</p>
+          </div>
+          <div class="col-md-5">
+            <h2 class="mb-5">Features and Benefits</h2>
+
+            <div class="media mb-5">
+              <div class="probootstrap-icon"><span class="icon-book display-4"></span></div>
+              <div class="media-body">
+                <h5 class="mt-0">Grouped by Topic</h5>
+                <p>Allows students to easily find questions to revise or answer.</p>
+              </div>
+            </div>
+
+            <div class="media mb-4">
+              <div class="probootstrap-icon"><span class="icon-users display-4"></span></div>
+              <div class="media-body">
+                <h5 class="mt-0">Vote on class times</h5>
+                <p>Students can agree on the best time for extra classes so everyone who wants to can join</p>
+              </div>
+            </div>
+
+            <div class="media mb-5">
+              <div class="probootstrap-icon"><span class="icon-chat display-4"></span></div>
+              <div class="media-body">
+                <h5 class="mt-0">Better learning outcomes</h5>
+                <p>Studies have shown that learning by teaching is extremely effective.
+                  Additionally, students get reputation points for answering questions and teaching classes.
+                  These points are evidence of the student's contributions and can be helpful in university applications as they show both knowledge and generosity.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="probootstrap-section probootstrap-section-feature pb-0 probootstrap-overflow-hidden">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 pl-md-5 pb-5 order-md-2 order-1">
+            <h2 class="mb-4 display-5 probootstrap-heading">Code_League code for everyone</h2>
+            <div class="probootstrap-item mb-4">
+              <h3>Free Education</h3>
+              <p>We teach you for free, Our mission is to educate the world. </p>
+            </div>
+            <div class="probootstrap-item mb-4">
+              <h3>Keep Updated</h3>
+              <p> We keep you updated, also through our whatsApp platform.</p>
+            </div>
+            <div class="probootstrap-item mb-4">
+              <h3>Feel free to ask</h3>
+              <p>We are free to answer any question concening programming.</p>
+            </div>
+            <div class="probootstrap-item mb-4">
+              <h3>Add your input</h3>
+              <p>Please feel free to add your own input, teach others also.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 pr-md-5 order-md-1 order-2">
+            <div class="probootstrap-device">
+
+              <img src="images/phone_3.png" alt="Free Bootstrap 4 Template by uicookies.com" class="img-fluid mb-md-0 mb-5">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="probootstrap-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md">
+            <div class="media">
+              <div class="probootstrap-icon"><span class="icon-fingerprint display-4"></span></div>
+              <div class="media-body">
+                <h5 class="mt-0">Code_League</h5>
+                <p>United we win,Code_League its a site for everyone. Please register and be part.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="media">
+              <div class="probootstrap-icon"><span class="icon-users display-4"></span></div>
+              <div class="media-body">
+                <h5 class="mt-0">For The Community</h5>
+                <p>We are free to help anyone free of charge, We share what we have.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="media">
+              <div class="probootstrap-icon"><span class="icon-chat display-4"></span></div>
+              <div class="media-body">
+                <h5 class="mt-0">Support Us By Sharing This to Others</h5>
+                <p>Please share this app so others may benefit, We will be grateful if your share.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="probootstrap-footer">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-md mb-4"><h2 class="probootstrap-heading"><a href="#">Code_League</a></h2></div>
+              <div class="col-md">
+                <div class="probootstrap-footer-widget mb-4">
+                  <h2 class="probootstrap-heading-2">Code for everyone</h2>
+                  <ul class="list-unstyled">
+                    <li><a href="{% url 'myblogs:about' %}" class="py-2 d-block">About</a></li>
+                    <li><a href="https://devworld10.netlify.app" class="py-2 d-block">Get updates</a></li>
+                    <li><a href="https://engprivykurura.tk" class="py-2 d-block">Press</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md">
+                 <div class="probootstrap-footer-widget mb-4">
+                  <h2 class="probootstrap-heading-2">Communities</h2>
+                  <ul class="list-unstyled">
+                    <li><a href="https://www.priviledgeprogrammer.cf" class="py-2 d-block">Support Priviledge</a></li>
+                    <li><a href="https://devworld.tk" class="py-2 d-block">Support Kartik</a></li>
+                    <li><a href="https://www.lensclick.cf" class="py-2 d-block">Better Web</a></li>
+                    <li><a href="https://wa.me/263716437178" class="py-2 d-block">Contribute</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md">
+                 <div class="probootstrap-footer-widget mb-4">
+                  <h2 class="probootstrap-heading-2">Useful links</h2>
+                  <ul class="list-unstyled">
+                    <li><a href="#" class="py-2 d-block">Project sevelopers</a></li>
+                    <li><a href="https://www.priviledgeprogrammer.ga" class="py-2 d-block">privykurura</a></li>
+                    <li><a href="https://devworl.tk" class="py-2 d-block">Kartik</a></li>
+                    <li><a href="https://www.priviledgekurura.cf" class="py-2 d-block">priviledge</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="probootstrap-footer-widget mb-4">
+              <ul class="probootstrap-footer-social list-unstyled float-md-right float-lft">
+                <li><a href="#"><span class="icon-twitter"></span></a></li>
+                <li><a href="https://www.facebook.com/groups/213885173800920/"><span class="icon-facebook"></span></a></li>
+                <li><a href="https://www.instagram.com/code_league.kb/"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md text-left">
+            <ul class="list-unstyled footer-small-nav">
+              <li><a href="#">Legal</a></li>
+              <li><a href="#">Privacy</a></li>
+              <li><a href="#">Cookies</a></li>
+              <li><a href="#">Terms</a></li>
+              <li><a href="{% url 'myblogs:about' %}">About</a></li>
+            </ul>
+          </div>
+          <div class="col-md text-md-right text-left">
+            <p><small>&copy; Code_League 2021. All Rights Reserved. <br> Made with <span class="icon-heart"></span>  code for us <a href="https://priviledgekurura.cf/">Code for everyone</a></small></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+{% extends "myblogs/base.html" %}
+{% block content %}
+<p>Topic: {{ topic }}</p>
+<p>Entries:</p>
+    <p>
+    <a href="{% url 'myblogs:new_edits' topic.id %}">Add new entry</a>
+    </p>
+<ul>
+    {% for edits in edits %}
+       <li>
+           <p>{{ edits.date_added|date:'M d, Y H:i' }}</p>
+           <p>{{ edits.text|linebreaks }}</p>
+           <p>
+               <a href="{% url 'myblogs:edit_edits' edits.id %}">Edit entry</a>
+           </p>
+       </li>
+    {% empty %}
+         <li>There are no entries for this topic yet</li>
+    {% endfor %}
+</ul>
+{% endblock content %}
+
+</body>
+</html>

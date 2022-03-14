@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   <title>Code_League</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Free HTML5 Website Template by uicookies.com" />
+    <meta name="keywords" content="free bootstrap 4, free bootstrap 4 template, free website templates, free html5, free template, free website template, html5, css3, mobile first, responsive" />
+    <meta name="author" content="uicookies.com" />
+      {% load static %}
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'myblog/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'myblog/css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'myblog/css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'myblog/css/style.css' %}">
+
+  <body>
+    
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark probootstrap-navabr-dark">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">Code_League</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#probootstrap-nav" aria-controls="probootstrap-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="probootstrap-nav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item"><a href="{% url 'myblogs:index' %}" class="nav-link">Home</a></li>
+              <li class="nav-item"><a href="{% url 'myblogs:about' %}" class="nav-link">About</a></li>
+              <li class="nav-item"><a href="{% url 'myblogs:services' %}" class="nav-link">Services</a></li>
+              <li class="nav-item"><a href="{% url 'myblogs:contact' %}" class="nav-link">Contact</a></li>
+              <li class="nav-item probootstrap-cta probootstrap-seperator"><a href="#" class="nav-link">Sign up</a></li>
+              <li class="nav-item probootstrap-cta"><a href="#" class="nav-link">Log In</a></li>
+            </ul>
+           
+          </div>
+        </div>
+      </nav>
+
+     <section class="probootstrap-cover">
+      <div class="container">
+        <div class="row probootstrap-vh-75 align-items-center text-left">
+          <div class="col-sm">
+            <div class="probootstrap-text pt-5">
+              <h1 class="probootstrap-heading text-white mb-4">Contact</h1>
+              <div class="probootstrap-subheading mb-5">
+                <p class="h4 font-weight-normal">Code_League Created by <u>Priviledge and Kartik</u></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="probootstrap-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <form action="" method="post" class="probootstrap-form mb-5">
+                {% csrf_token %}
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="fname">First Name</label>
+                    <input type="text" class="form-control" id="fname" name="fname">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="lname">Last Name</label>
+                    <input type="text" class="form-control" id="lname" name="lname">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email">
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea cols="30" rows="10" class="form-control" id="message" name="message"></textarea>
+              </div>
+              <div class="form-group">
+                <input type="submit" class="btn btn-primary" id="submit" name="submit" value="Send Message">
+              </div>
+            </form>
+          </div>
+          <div class="col-md-6 pl-md-5 pl-3">
+            <h4 class="mb-5">Contact Details</h4>
+            <div class="media mb-5">
+              <div class="probootstrap-icon"><span class="icon-location display-4"></span></div>
+              <div class="media-body">
+                <h5 class="mt-0">Priviledge Kurura. mpkcomtech@gmail.com</h5>
+                  <div class="media-body">
+                <h5 class="mt-0">Kartik S Binzane. devworld70@gmail.com</h5>
+              </div>
+              </div>
+            </div>
+            <div class="media mb-5">
+              <div class="probootstrap-icon"><span class="icon-mail display-4"></span></div>
+              <div class="media-body">
+                <h5 class="mt-0">code_league.com</h5>
+              </div>
+            </div>
+
+            <div class="media mb-5">
+              <div class="probootstrap-icon"><span class="icon-phone display-4"></span></div>
+              <div class="media-body">
+                <h5 class="mt-0">+263716437178</h5>
+              </div>
+                 <div class="media-body">
+                <h5 class="mt-0">+917776989483</h5>
+              </div>
+            </div>
+           
+          </div>
+        </div>
+
+      </div>
+    </section>
+  <footer class="probootstrap-footer">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-md mb-4"><h2 class="probootstrap-heading"><a href="#">Code_League</a></h2></div>
+              <div class="col-md">
+                <div class="probootstrap-footer-widget mb-4">
+                  <h2 class="probootstrap-heading-2">Code for everyone</h2>
+                  <ul class="list-unstyled">
+                    <li><a href="{% url 'myblogs:about' %}" class="py-2 d-block">About</a></li>
+                    <li><a href="https://devworld10.netlify.app" class="py-2 d-block">Get updates</a></li>
+                    <li><a href="https://engprivykurura.tk" class="py-2 d-block">Press</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md">
+                 <div class="probootstrap-footer-widget mb-4">
+                  <h2 class="probootstrap-heading-2">Communities</h2>
+                  <ul class="list-unstyled">
+                    <li><a href="https://www.priviledgeprogrammer.cf" class="py-2 d-block">Support Priviledge</a></li>
+                    <li><a href="https://devworld.tk" class="py-2 d-block">Support Kartik</a></li>
+                    <li><a href="https://www.lensclick.cf" class="py-2 d-block">Better Web</a></li>
+                    <li><a href="https://wa.me/263716437178" class="py-2 d-block">Contribute</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md">
+                 <div class="probootstrap-footer-widget mb-4">
+                  <h2 class="probootstrap-heading-2">Useful links</h2>
+                  <ul class="list-unstyled">
+                    <li><a href="#" class="py-2 d-block">Project sevelopers</a></li>
+                    <li><a href="https://www.priviledgeprogrammer.ga" class="py-2 d-block">privykurura</a></li>
+                    <li><a href="https://devworl.tk" class="py-2 d-block">Kartik</a></li>
+                    <li><a href="https://www.priviledgekurura.cf" class="py-2 d-block">priviledge</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="probootstrap-footer-widget mb-4">
+              <ul class="probootstrap-footer-social list-unstyled float-md-right float-lft">
+                <li><a href="#"><span class="icon-twitter"></span></a></li>
+                <li><a href="https://www.facebook.com/groups/213885173800920/"><span class="icon-facebook"></span></a></li>
+                <li><a href="https://www.instagram.com/code_league.kb/"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md text-left">
+            <ul class="list-unstyled footer-small-nav">
+              <li><a href="#">Legal</a></li>
+              <li><a href="#">Privacy</a></li>
+              <li><a href="#">Cookies</a></li>
+              <li><a href="#">Terms</a></li>
+              <li><a href="{% url 'myblogs:about' %}">About</a></li>
+            </ul>
+          </div>
+          <div class="col-md text-md-right text-left">
+            <p><small>&copy; Code_League 2021. All Rights Reserved. <br> Made with <span class="icon-heart"></span>  code for us <a href="https://priviledgekurura.cf/">Code for everyone</a></small></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+  </body>
+</html>

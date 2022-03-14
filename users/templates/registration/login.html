@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+
+</head>
+<body>
+{% extends "myblogs/base.html" %}
+{% load static %}
+<link href="{% static 'myblog/css/bootstrap.min.css' %}" rel="stylesheet">
+    <sript src="{% static 'myblog/bootstrap.min.js' %}"></sript>
+{% block page_header %}
+    <h3>Log in to your account.</h3>
+{% endblock page_header %}
+{% block content %}
+    <p>
+    {% if form.errors %}
+        <p>Your username and password didn't match, Please try again.</p>
+    {% endif %}
+    <form method="post" action="{% url 'users:login' %}" class="form">
+        <div class="form-group">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">Log in</button>
+        <input type="hidden" name="next"
+        value="{% url 'myblogs:index' %}"/>
+
+    </form>
+{% endblock content %}
+</body>
+</html>
